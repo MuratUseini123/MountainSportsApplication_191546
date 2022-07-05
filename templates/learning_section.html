@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <title>MountainSports_191546</title>
+</head>
+<style>
+    .myCenter {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .list-group-item {
+        background-color: #9ce8a6;
+    }
+</style>
+<body>
+<nav class="navbar navbar-expand-lg"
+     style="padding-left:10%;padding-right: 10%;background: linear-gradient(#9ce8a6, white)">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <a class="navbar-brand" href="{% url 'starting_page' %}">
+                <img src="{% static 'images/climbing.png' %}" width="30" height="30" class="d-inline-block align-top"
+                     alt="">
+                Mountain Sports Application
+            </a>
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link active" href="{% url 'learn' %}">Learning</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'weather' %}">Weather Now & Current Location</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'trips' %}">Trips</a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="{% url 'discover' %}">Find route</a>
+                </li>
+                <li>
+                    <div style="width: 100px"></div>
+                </li>
+                <li>
+                    <div class="d-flex flex-row reverse ">
+                        <div class="lead">Welcome, {{ logged_user }}</div> &nbsp; &nbsp; &nbsp;| &nbsp;
+                        <span><a class="lead" style="text-decoration: none;color: black" href="{% url 'logout' %}">Logout</a>&nbsp;  &nbsp;</span>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="container text-center">
+        <h1 style="margin-top: 10px">Learning Section</h1>
+        <div class="p-3">
+            <hr>
+        </div>
+        <div class="row p-3">
+            <div class="col-4">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                       href="#list-settings" role="tab" aria-controls="list-settings">HOW MUCH TIME WEEK DO YOU NEED TO
+                        DEDICATE YOUR TIME TO CLIMBING?
+                    </a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
+                       href="#list-profile" role="tab" aria-controls="list-profile">What sort of climbing shoes should I
+                        get?
+                    </a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list"
+                       href="#list-messages" role="tab" aria-controls="list-messages">How do I know if a harness fits
+                        me?
+                    </a>
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+                       href="#list-home" role="tab" aria-controls="list-home">I’ve just completed a beginner’s course in
+                        climbing, what should I do next?
+                    </a>
+                    <a class="list-group-item list-group-item-action" id="list-toggle-item1" data-bs-toggle="list"
+                       href="#list-item1" role="tab" aria-controls="list-item1">What sort of belay device should I buy?
+
+                    </a>
+                    <a class="list-group-item list-group-item-action" id="list-toggle-item2" data-bs-toggle="list"
+                       href="#list-item2" role="tab" aria-controls="list-item2">I don’t seem to be able to complete a
+                        climb, I get half way up and my arms just give out. What’s wrong with me?
+
+                    </a>
+                    <a class="list-group-item list-group-item-action" id="list-toggle-item3" data-bs-toggle="list"
+                       href="#list-item3" role="tab" aria-controls="list-item3">I’ve been climbing indoors for a while
+                        now, but would like to try climbing outside. I have no equipment, what should I do?
+
+
+                    </a>
+                    <a class="list-group-item list-group-item-action" id="list-toggle-item4" data-bs-toggle="list"
+                       href="#list-item4" role="tab" aria-controls="list-item4">I’ve been bottom roping for some time
+                        now and am quite strong, but I am becoming quite bored with the same routes. How can I become a
+                        lead climber?
+
+
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="container myCenter">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                             aria-labelledby="list-home-list">
+                            You need to spend time consolidating what you have learnt so that it becomes second nature.
+                            Concentrate on developing your climbing technique and style not pushing the grade.
+                        </div>
+                        <div class="tab-pane fade" id="list-profile" role="tabpanel"
+                             aria-labelledby="list-profile-list">
+                            Lorem
+                            If you’re asking that question you are probably a beginner and thinking of buying your first
+                            pair of shoes. You will be given lots of advice, but you will want a pair that are board
+                            lasted,
+                            so they are quite stiff but you will need a tight fit. Climbing shoes are a piece of
+                            equipment,
+                            not clothing and should only be worn to climb in. If you can walk around in them they are
+                            too
+                            loose. Read week one ‘From the Ground Up’ for a more comprehensive answer
+                        </div>
+                        <div class="tab-pane fade" id="list-messages" role="tabpanel"
+                             aria-labelledby="list-messages-list">
+                            A harness must fit snugly around the waist, with the belay loop dead centre and with enough
+                            tape
+                            left to extend through the loops on the waist belt, even if you are wearing a thick jumper.
+                            The
+                            middle loop at the back of the harness should sit in the middle of your back. Leg loops
+                            should
+                            fit comfortably around the top of the thighs, which if they are adjustable should have
+                            enough
+                            tape to extend through the loops.
+                        </div>
+                        <div class="tab-pane fade" id="list-settings" role="tabpanel"
+                             aria-labelledby="list-settings-list">
+                            There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered
+                            alteration in some form, by injected humour, or randomised words which don't look even
+                            slightly
+                            believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there
+                            isn't
+                            anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
+                            Internet
+                            tend to repeat predefined chunks as necessary, making this the first true generator on the
+                            Internet.
+                            It uses a dictionary of over 200 Latin words, combined with a handful of model sentence
+                            structures,
+                            to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore
+                            always
+                            free
+                            from repetition, injected humour, or non-characteristic words etc.
+                        </div>
+                        <div class="tab-pane fade show" id="list-item1" role="tabpanel"
+                             aria-labelledby="list-toggle-item1">
+                            A belay device can be used for both sport (single rope) and trad (double ropes), and for
+                            abseiling, so it is best to buy a universal belay device with two slots. And, if you buy a
+                            device with incorporated teeth it will allow you to use a wide range of rope sizes.
+                        </div>
+
+
+                        <div class="tab-pane fade show" id="list-item2" role="tabpanel"
+                             aria-labelledby="list-toggle-item2">
+                            It probably means you are pulling yourself up by your arms, rather than pushing from your
+                            feet
+                            through your legs. Your feet, and the shoes they are in, are the most important components
+                            of
+                            climbing. If you watch a good climber they will move their feet more times than their hands
+                            and
+                            spend more time looking for footholds rather than hand holds. The muscles in the legs are
+                            far
+                            larger than the arms and if you rely solely in your arms to pull your body weight up the
+                            wall,
+                            you are going to get tired. Think feet. Get your weight over each foot before you try and
+                            push
+                            upwards.
+                        </div>
+                        <div class="tab-pane fade show" id="list-item3" role="tabpanel"
+                             aria-labelledby="list-toggle-item3">
+                            The best thing you could do is seek out a qualified instructor, namely me, Murat
+                            0032223131. A good instructor will save you a lot of time and money by teaching you from the
+                            beginning in a safe and controlled manner. They will have equipment you can use to give you
+                            a
+                            taste of outdoor climbing and advice on what and when to buy should you become addicted like
+                            me.
+                        </div>
+
+                        <div class="tab-pane fade show" id="list-item4" role="tabpanel"
+                             aria-labelledby="list-toggle-item4">
+                            Most climbing centres offer an Indoor Sport Lead Course for around £75 for a 4 week 2 hour
+                            course but they do not cover the transition to outdoor sport climbing. If you book a lead
+                            course
+                            with monsterclimbs, for £80 plus transport costs (minimum of 2 people) you will become
+                            competent
+                            to lead sport both at an indoor climbing centre and any outdoor sport crag, and be able to
+                            keep
+                            yourself safe and recover all your equipment from any sport crag in the World.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-3" style="margin-bottom: 5vh">
+            <hr>
+        </div>
+        <div class="container">
+
+            <div class="myCenter text-center  m-0">
+                <img src="{% static 'images/climbing.png' %}" style="height: 50px;width:50px;" alt="">
+                <small class="d-block mb-3 text-muted">© Murat Useini - 2022</small>
+                <a class="lead text-decoration-none text-black" href="#">Contact proffesional</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

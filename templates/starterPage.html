@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <title>MountainSports_191546</title>
+</head>
+<style>
+    .myCenter {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+<body>
+<nav class="navbar navbar-expand-lg"
+     style="padding-left:10%;padding-right: 10%;background: linear-gradient(#9ce8a6, white)">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <a class="navbar-brand" href="{% url 'starting_page' %}">
+                <img src="{% static 'images/climbing.png' %}" width="30" height="30" class="d-inline-block align-top"
+                     alt="">
+                Mountain Sports Application
+            </a>
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link active" href="{% url 'learn' %}">Learning</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'weather' %}">Weather Now & Current Location</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'trips' %}">Trips</a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="{% url 'discover' %}">Find route</a>
+                </li>
+                <li>
+                    <div style="width: 100px"></div>
+                </li>
+                <li>
+                    <div class="d-flex flex-row reverse ">
+                        <div class="lead">Welcome, {{ logged_user }}</div> &nbsp; &nbsp; &nbsp;| &nbsp;
+                        <span><a class="lead" style="text-decoration: none;color: black" href="{% url 'logout' %}">Logout</a>&nbsp;  &nbsp;</span>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-image"
+         style="background-size: cover;background-image: url('{% static 'images/learner.jpg' %}');">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal text-white">Mountain Sports</h1>
+            <p class="lead font-weight-normal text-white ">Are you new to climbing? Were there some questions you
+                thought about but didn’t ask at your introductory lesson? Or you are expert but want to expand your
+                knowledge? This is the right place for everyone who wants to learn about anything. Are you ready ?</p>
+            <a class="btn btn-secondary text-white " href="{% url 'learn' %}">Start Learning</a>
+        </div>
+    </div>
+    <div class="p-3">
+        <hr>
+    </div>
+    <div style="height: 100vh;" class="p-3 p-md-5 m-md-3">
+        <div class="row">
+            <div class="col-8">
+                <div style="height: 90vh; width: 100%; background-color: #9ce8a6">
+                    <div class="myCenter text-center">
+                        <h1>MAP</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+
+
+                <div style="height: 90vh; width: 100%;">
+                    <div class="myCenter text-center p-3">
+                        <p class="lead font-weight-normal "> Mountain sports application is your best
+                            assistant. It can tell you best routes for your trip, find shortcuts and so much more.</p>
+                        <a class="btn btn-secondary " href="{% url 'discover' %}">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-3" style="margin-bottom: 5vh">
+        <hr>
+    </div>
+
+    <div class="container" style="height: 60vh">
+        <div class="myCenter text-center" style="margin-bottom: 10px;">
+            <h1 class="display-4 font-weight-normal">About us</h1>
+            <p class="lead font-weight-normal">
+                “Mountain Sports Application” Is an application which will be used by athletes,
+                for all running and cycling enthusiasts but also for people who practice hiking and many
+                other sports. This application is also for people which has some disabilities which limit
+                their physical function (hearing, visual, mobility etc.). This application will have many
+                functionalities including listing all the possible routes for your trip, finding routes by
+                searching which is crucial functionality because not every user knows every route which
+                they are going to walk. “Mountain Sports Application” will be commonly used for
+                outdoor activities such as hiking, mountain biking, climbing and many other activities.
+            </p>
+        </div>
+    </div>
+
+    <div class="p-3" style="margin-bottom: 5vh">
+        <hr>
+    </div>
+    <div class="container">
+        <div class="myCenter text-center  m-0">
+            <img src="{% static 'images/climbing.png' %}" style="height: 50px;width:50px;" alt="">
+            <small class="d-block mb-3 text-muted">© Murat Useini - 2022</small>
+        </div>
+    </div>
+</div>
+</body>
+</html>
